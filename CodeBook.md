@@ -1,12 +1,12 @@
-The dataset includes the variables or columns described in this codebook.
-=========================================================================
+###The dataset includes the variables or columns described in this codebook.
 
 "SubjectID" - Identifies the subject who performed the activity for each sample. ID range is from 1 to 30.
+
 "Activity" - Activity name the subject performed for the sample. 6 activities include WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, STANDING, AND LAYING.
 
-=====================================================================================================
+
 The following variables are Average value of each variable. Naming convention is provided as follows:
-=====================================================================================================
+
 'Time' - Time captured at a constant rate of 50 Hz.
 'Freq' - Frequency domain signals.
 '-XYZ' - denotes 3-axial signals in the X, Y and Z directions.
