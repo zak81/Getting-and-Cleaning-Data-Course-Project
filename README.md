@@ -1,9 +1,9 @@
 ### Getting-and-Cleaning-Data-Course-Project
 ####Course Project
 
-Objective is to merge components of data to create a single data set that is tidy and descriptive.
+#####Objective is to merge components of data to create a single data set that is tidy and descriptive.
 
-Number is parenthesis denote line number in run_analysis.R
+*Number in parenthesis denote line number in run_analysis.R*
 
 (2) library(reshape2) -- melt function in reshape2 library is used to melt dataset into tall and skinny dataset.
 
