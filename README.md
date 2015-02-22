@@ -37,35 +37,35 @@
 
 (28-33) -- Following lines convert activity code to a descriptive activity names.
 
-data_set$Activity[data_set$Activity==1] <- "WALKING"
+  data_set$Activity[data_set$Activity==1] <- "WALKING"
 
-data_set$Activity[data_set$Activity==2] <- "WALKING UPSTAIRS"
+  data_set$Activity[data_set$Activity==2] <- "WALKING UPSTAIRS"
 
-data_set$Activity[data_set$Activity==3] <- "WALKING DOWNSTAIRS"
+  data_set$Activity[data_set$Activity==3] <- "WALKING DOWNSTAIRS"
 
-data_set$Activity[data_set$Activity==4] <- "SITTING"
+  data_set$Activity[data_set$Activity==4] <- "SITTING"
 
-data_set$Activity[data_set$Activity==5] <- "STANDING"
+  data_set$Activity[data_set$Activity==5] <- "STANDING"
 
-data_set$Activity[data_set$Activity==6] <- "LAYING"
+  data_set$Activity[data_set$Activity==6] <- "LAYING"
 
 (37-44) -- Following lines label the dataset with descriptive variable names.
 
-colnames(data_set) <- gsub("\\()", "", names(data_set))
+  colnames(data_set) <- gsub("\\()", "", names(data_set))
 
-colnames(data_set) <- gsub("BodyBody", "Body", names(data_set))
+  colnames(data_set) <- gsub("BodyBody", "Body", names(data_set))
 
-colnames(data_set) <- gsub("fBody", "FreqBody", names(data_set))
+  colnames(data_set) <- gsub("fBody", "FreqBody", names(data_set))
 
-colnames(data_set) <- gsub("tBody", "TimeBody", names(data_set))
+  colnames(data_set) <- gsub("tBody", "TimeBody", names(data_set))
 
-colnames(data_set) <- gsub("tGravity", "TimeGravity", names(data_set))
+  colnames(data_set) <- gsub("tGravity", "TimeGravity", names(data_set))
 
-colnames(data_set) <- gsub("-std", "Std", names(data_set))
+  colnames(data_set) <- gsub("-std", "Std", names(data_set))
 
-colnames(data_set) <- gsub("-mean", "Mean", names(data_set))
+  colnames(data_set) <- gsub("-mean", "Mean", names(data_set))
 
-colnames(data_set) <- gsub("-", "", names(data_set))
+  colnames(data_set) <- gsub("-", "", names(data_set))
 
 (48) dataMelt <- melt(data_set, id=c("SubjectID", "Activity"), measure.vars= -(1:2)) -- Reshaping the data by passing melt function. Telling function to set ID variables SubjectID and Activity, set measured variables to all other variables. 
 
