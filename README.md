@@ -25,9 +25,7 @@ data_set$Activity[data_set$Activity==3] <- "WALKING DOWNSTAIRS"
 data_set$Activity[data_set$Activity==4] <- "SITTING"
 data_set$Activity[data_set$Activity==5] <- "STANDING"
 data_set$Activity[data_set$Activity==6] <- "LAYING"
-
-
-# Label the data set with descriptive variable names
+(37-44) -- Following lines label the dataset with descriptive variable names.
 colnames(data_set) <- gsub("\\()", "", names(data_set))
 colnames(data_set) <- gsub("BodyBody", "Body", names(data_set))
 colnames(data_set) <- gsub("fBody", "FreqBody", names(data_set))
@@ -36,11 +34,8 @@ colnames(data_set) <- gsub("tGravity", "TimeGravity", names(data_set))
 colnames(data_set) <- gsub("-std", "Std", names(data_set))
 colnames(data_set) <- gsub("-mean", "Mean", names(data_set))
 colnames(data_set) <- gsub("-", "", names(data_set))
-
-
-# From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
-dataMelt <- melt(data_set, id=c("SubjectID", "Activity"), measure.vars= -(1:2))
-dataCast <- dcast(dataMelt, SubjectID + Activity ~ variable, mean)
-colnames(dataCast)[-(1:2)] <- paste("Average(", colnames(dataCast)[-(1:2)], ")", sep="")
+(48) dataMelt <- melt(data_set, id=c("SubjectID", "Activity"), measure.vars= -(1:2)) -- Reshaping the data by passing melt function. Telling function to set ID variables SubjectID and Activity, set measured variables to all other variables. 
+(49) dataCast <- dcast(dataMelt, SubjectID + Activity ~ variable, mean) -- Using dcast function on data, summarize SubjectID and Activity using mean of all variables.
+(50) colnames(dataCast)[-(1:2)] <- paste("Average(", colnames(dataCast)[-(1:2)], ")", sep="") -- This final step renames all measured variables to say Average(variable).
 
 
