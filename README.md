@@ -37,7 +37,7 @@
 
 (28-33) -- Following lines convert activity code to a descriptive activity names.
 
-```data_set$Activity[data_set$Activity==1] <- "WALKING"```
+`data_set$Activity[data_set$Activity==1] <- "WALKING"`
 
   data_set$Activity[data_set$Activity==2] <- "WALKING UPSTAIRS"
 
